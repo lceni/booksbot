@@ -46,9 +46,9 @@ class BooksSpider(scrapy.Spider):
 
     def parse(self, response):
         item = {}
-        item['url'] = reqeust.url
-        item['title'] = reqeust.css('title::text').extract_first()
-        item['description'] = reqeust.xpath("//meta[@name='description'/text()]").extract_first()
-        item['keywords'] = reqeust.xpath("//meta[@name='keywords'/text()]").extract_first()
+        item['url'] = response.url
+        item['title'] = response.css('title::text').extract_first()
+        item['description'] = response.xpath("//meta[@name='description'/text()]").extract_first()
+        item['keywords'] = response.xpath("//meta[@name='keywords'/text()]").extract_first()
         yield item
 
