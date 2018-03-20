@@ -4,7 +4,7 @@ import scrapy
 
 class BooksSpider(scrapy.Spider):
     name = "top-1m"
-    allowed_domains = ["books.toscrape.com"]
+
     start_urls = [
         'http://youtube.com/',
         'http://facebook.com/',
