@@ -5,5 +5,5 @@ BOT_NAME = 'books'
 SPIDER_MODULES = ['books.spiders']
 NEWSPIDER_MODULE = 'books.spiders'
 
-ROBOTSTXT_OBEY = True
-HTTPCACHE_ENABLED = True
+ROBOTSTXT_OBEY = False
+HTTPCACHE_ENABLED = False
