@@ -12,7 +12,8 @@ class BooksSpider(scrapy.Spider):
     def start_requests(self):
         print os.path.abspath(os.path.dirname(__file__))
 
-        zipFile = zipfile.ZipFile(os.path.abspath(os.path.dirname(__file__)) + '/../top-1m.csv.zip')
+        #zipFile = zipfile.ZipFile(os.path.abspath(os.path.dirname(__file__)) + '/../top-1m.csv.zip')
+        zipFile = zipfile.ZipFile('/tmp/unpacked-eggs/__main__.egg/books/top-1m.csv.zip')
         csvFile = zipFile.open('top-1m.csv')
         spamReader = csv.reader(csvFile, delimiter=',')
         for row in spamReader:
