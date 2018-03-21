@@ -14,7 +14,7 @@ class BooksSpider(scrapy.Spider):
         csvFile = zipFile.open('top-1m.csv')
         spamReader = csv.reader(csvFile, delimiter=',')
         for row in spamReader:
-            yeld scrapy.Request(row[1], self.parse)
+            yield scrapy.Request(row[1], self.parse)
 
 
 
