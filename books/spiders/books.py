@@ -51,7 +51,7 @@ class BooksSpider(scrapy.Spider):
 
         item['url'] = response.url
         item['title'] = response.css('title::text').extract_first()
-        item['description'] = response.xpath("//meta[@name='description']/data(@content)").extract_first()
-        item['keywords'] = response.xpath("//meta[@name='keywords']/data(@content)").extract_first()
+        item['description'] = response.xpath("//meta[@name='description']/@content").extract_first()
+        item['keywords'] = response.xpath("//meta[@name='keywords']/@content").extract_first()
         yield item
 
