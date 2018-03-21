@@ -10,7 +10,8 @@ class BooksSpider(scrapy.Spider):
     start_urls = []
 
     def start_requests(self):
-        zipFile = zipfile.ZipFile('./books/top-1m.csv.zip')
+        print 'sdfsdf'
+        zipFile = zipfile.ZipFile('build/bdist.linux-x86_64/egg/books/top-1m.csv.zip')
         csvFile = zipFile.open('top-1m.csv')
         spamReader = csv.reader(csvFile, delimiter=',')
         for row in spamReader:
