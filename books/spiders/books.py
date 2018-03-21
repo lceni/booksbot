@@ -46,13 +46,13 @@ class BooksSpider(scrapy.Spider):
 
     def parse(self, response):
         item = {}
+
+
+
         item['url'] = response.url
         item['title'] = response.css('title::text').extract_first()
         item['og:title'] = response.xpath("//meta[@property='og:title']/@content").extract_first()
-        item['description'] = response.xpath("//meta[@name='description']").extract_first()
-        item['description2'] = response.xpath("//meta[@name='description']/@content/text()").extract_first()
-        item['og:description'] = response.xpath("//meta[@property='og:description']/@content").extract_first()
-        item['keywords'] = response.xpath("//meta[@name='keywords']").extract_first()
-        item['keywords2'] = response.xpath("//meta[@name='keywords']/@content/text()").extract_first()
+        item['description'] = response.xpath("//meta[@name='description']/[@content]").extract_first()
+        item['keywords'] = response.xpath("//meta[@name='keywords']/[@content]").extract_first()
         yield item
 
